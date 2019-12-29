@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #323D47;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #3C96FF;
+}
+
+.Personal {
+  background-color: limegreen;
+}
+.Small {
+  background-color: white;
+}
+.Medium {
+  background-color: yellow;
+}
+.Large {
+  background-color: orange;
+}
+.Epic {
+  background-color: red;
+}
+.Colossal {
+  background-color: #2b95ff;
+}
+.Gigantic {
+  background-color: #934cdb;
+}
+
+.MuiTableCell-root.MuiTableCell-head{
+  color: white;
+}
+
+body{
+ background-color:  #424950;
+}

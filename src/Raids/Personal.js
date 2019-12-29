@@ -1,0 +1,36 @@
+export const PersonalRaidsData = [
+    {
+        value: 0,
+        name: "Magma Horror",
+        size: "Personal",
+        type: ["Underground","Beast"],
+        timer: 24,
+        magics: 1,
+        cooldown: null,
+        resources: ["Stamina"],
+        notes: "The essence to summon this raid can be gained from Subterranean Depths quest bosses.",
+        art_small: null,
+        art_essence: '/media/SplashArts/Small/Personal/Magma_horror_small.jpg',
+    },
+    {
+        value: 1,
+        name: "Dahrizon's General",
+        size: "Personal",
+        type: ["Undead"],
+        art: '/memes/x2.jpg',
+     },
+     {
+        value: 2,
+        name: "Animated Armor Essence",
+        size: "Personal",
+        type: ["Construct"],
+        timer: 12,
+        magics: 1,        
+        cooldown: 6,
+        resources: ["Stamina"],
+        notes: "Obtained By: Animated Armor quest boss",
+        art_small: null,
+        art_essence: '/media/SplashArts/Essence/Essence_animarmor.png',
+    },
+    
+];

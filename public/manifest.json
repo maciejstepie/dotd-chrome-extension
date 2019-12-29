@@ -1,11 +1,16 @@
 {
   "short_name": "DotD Extension",
-  "name": "Simple Extension DotD Raid Tiers",
+  "name": "DotD Extension Raid Tiers",
   "icons": {                   
     "16": "/media/icons/icon.png",
           "48": "/media/icons/icon.png",
-         "128": "/media/icons/icon.png"
+         "128": "/media/icons/icon128.png"
   },  
+  "permissions": [
+    "tabs",
+    "declarativeContent",
+    "storage"
+],
 
   
   "version": "1.0",
@@ -16,7 +21,21 @@
         "default_icon": {
           "16": "/media/icons/icon.png",
           "48": "/media/icons/icon.png",
-         "128": "/media/icons/icon.png" 
+         "128": "/media/icons/icon128.png" 
       }
-    }
+    },
+    "background": {
+      "scripts": [
+        "browser-polyfill.js",
+        "background.js"
+      ]
+    },
+    "content_scripts": [{      
+      "matches": ["http://*/*"],
+      "js": [
+        "browser-polyfill.js"
+      ]
+    }]
+
+
 }

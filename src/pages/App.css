@@ -21,25 +21,25 @@
   color: #3C96FF;
 }
 
-.Personal {
+.Personal.Background{
   background-color: limegreen;
 }
-.Small {
+.Small.Background {
   background-color: white;
 }
-.Medium {
+.Medium.Background {
   background-color: yellow;
 }
-.Large {
+.Large.Background {
   background-color: orange;
 }
-.Epic {
+.Epic.Background {
   background-color: red;
 }
-.Colossal {
+.Colossal.Background {
   background-color: #2b95ff;
 }
-.Gigantic {
+.Gigantic.Background {
   background-color: #934cdb;
 }
 
@@ -49,4 +49,7 @@
 
 body{
  background-color:  #424950;
+}
+.HighLightRow:hover{
+  filter: brightness(125%);
 }

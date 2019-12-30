@@ -1,12 +1,13 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 //import TableContainer from '@material-ui/core/TableContainer';
 import {GetAllRaids} from '../Raids/Raids';
 import { Avatar, Table,TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import  { OPEN_RAID_ACTION } from '../redux/actions';
+import { useSelector, useDispatch} from 'react-redux';
 //&nbsp;
 
 function Content(){
-
+    const dispatch = useDispatch();
     const selectedTypes = useSelector(state => state.searchReducer);
 
     const isTrue = (arr, arr2) =>{
@@ -33,6 +34,9 @@ function Content(){
     }
     const rows = filterRaids();
 
+    const ClickRaid = (raid) =>{
+      dispatch(OPEN_RAID_ACTION(raid));
+    }
     return (
 <>
     {/*selectedTypes && <span>{JSON.stringify(selectedTypes)}</span>*/}
@@ -47,7 +51,7 @@ function Content(){
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.name} className={row.size}>
+            <TableRow key={row.name} className={row.size + " HighLightRow Background"  } onClick={() => {ClickRaid(row.name)}}>
               <TableCell scope="row">
               <Avatar alt={row.name} src={row.art_essence}/>
               </TableCell>

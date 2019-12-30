@@ -1,4 +1,9 @@
 import { PersonalRaidsData } from '../Raids/Personal';
+import { MediumRaidsData } from '../Raids/Medium';
+import { LargeRaidsData } from '../Raids/Large';
+import { EpicRaidsData } from '../Raids/Epic';
+import { GiganticRaidsData } from '../Raids/Gigantic';
+import { ColossalRaidsData } from '../Raids/Colossal';
 
 function dynamicSort(property) {
 	var sortOrder = 1;
@@ -14,7 +19,8 @@ function dynamicSort(property) {
 
 function AllRaids() {
 
-    return PersonalRaidsData;
+
+    return PersonalRaidsData.concat(MediumRaidsData).concat(LargeRaidsData).concat(EpicRaidsData).concat(GiganticRaidsData).concat(ColossalRaidsData);
 }
 
 function Foo() {
@@ -32,3 +38,14 @@ function Foo() {
 
 export const GetTypes = Foo();
 export const GetAllRaids = AllRaids();
+export function CalculateFairShare(hp, size){
+
+	switch(size){
+
+		case("Colosal"):
+		return hp/500;
+		
+		default:
+			return null;
+	}
+}

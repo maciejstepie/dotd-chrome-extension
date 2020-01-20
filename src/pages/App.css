@@ -20,7 +20,6 @@
 .App-link {
   color: #3C96FF;
 }
-
 .Personal.Background{
   background-color: limegreen;
 }
@@ -42,6 +41,69 @@
 .Gigantic.Background {
   background-color: #934cdb;
 }
+
+
+.Personal{
+  color: limegreen;
+}
+.Small {
+  color: white;
+}
+.Medium {
+  color: yellow;
+}
+.Large {
+  color: orange;
+}
+.Epic {
+  color: red;
+}
+.Colossal {
+  color: #2b95ff;
+}
+.Gigantic {
+  color: #934cdb;
+}
+
+
+
+.Resources.Stamina{
+    color: rgb(220, 185, 35);
+}
+.Resources.Energy{
+    color: rgb(30, 250, 40);
+}
+.Resources.Honor{
+    color: rgb(255, 0, 234);
+}
+.Stat.Attack{
+  color: rgb(225, 90, 40);
+}
+.Stat.Defense{
+  color: rgb(140, 95, 215);
+}
+.Stat.Health{
+  color: rgb(130, 30, 30);
+}
+
+
+.Difficulty.Normal{
+  color: rgb(30, 130, 38);
+  border: 1px solid rgb(30, 130, 38);
+
+  
+}
+.Difficulty.Hard{
+  color: rgb(123, 130, 30);
+}
+.Difficulty.Legendary{
+  color: rgb(130, 30, 30);
+}
+.Difficulty.Nightmare{
+  color: rgb(65, 30, 130);  
+}
+
+
 
 .MuiTableCell-root.MuiTableCell-head{
   color: white;

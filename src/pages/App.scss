@@ -1,0 +1,187 @@
+$personalColor: limegreen;
+$normalColor: rgb(30, 130, 38);
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #323d47;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Size {
+  &.Text {
+    &.Personal {
+      color: limegreen;
+    }
+    &.Small {
+      color: white;
+    }
+    &.Medium {
+      color: yellow;
+    }
+    &.Large {
+      background-color: orange;
+    }
+    &.Epic {
+      color: red;
+    }
+    &.Colossal {
+      color: #2b95ff;
+    }
+    &.Gigantic {
+      color: #934cdb;
+    }
+  }
+  &.Background {
+    &.Personal {
+      background-color: limegreen;
+    }
+    &.Small {
+      background-color: white;
+    }
+    &.Medium {
+      background-color: yellow;
+    }
+    &.Large {
+      background-color: orange;
+    }
+    &.Epic {
+      background-color: red;
+    }
+    &.Colossal {
+      background-color: #2b95ff;
+    }
+    &.Gigantic {
+      background-color: #934cdb;
+    }
+  }
+}
+
+.Resources {
+  &.Stamina {
+    color: rgb(220, 185, 35);
+  }
+
+  &.Energy {
+    color: rgb(30, 250, 40);
+  }
+
+  &.Honor {
+    color: rgb(255, 0, 234);
+  }
+}
+
+.Stat {
+  &.Attack {
+    color: rgb(225, 90, 40);
+  }
+
+  &.Defense {
+    color: rgb(140, 95, 215);
+  }
+
+  &.Health {
+    color: rgb(130, 30, 30);
+  }
+}
+
+.Difficulty {
+  &.Personal {
+    color: $personalColor;
+    border: 1px solid $personalColor;
+
+    &.active {
+      color: white;
+      border-color: transparent;
+      background-color: $personalColor;
+    }
+    //nav-item nav-link active
+  }
+
+  &.Normal {
+    color: white;
+    border: 1px solid $normalColor;
+    background-color: darken($normalColor, $amount: 10);
+
+    &.active {
+      color: white;
+      border-color: transparent;
+      background-color: $normalColor;
+    }
+  }
+
+  &.Hard {
+    color: white;
+    border: 1px solid rgb(123, 130, 30);
+    background-color: darken(rgb(123, 130, 30), $amount: 10);
+    &.active {
+      color: white;
+      background-color: rgb(123, 130, 30);
+    }
+  }
+
+  &.Legendary {
+    color: white;
+    border: 1px solid rgb(130, 30, 30);
+    background-color: darken(rgb(130, 30, 30), $amount: 10);
+    &.active {
+      color: white;
+      border: 1px inset white;
+      background-color: rgb(130, 30, 30);
+    }
+  }
+
+  &.Nightmare {
+    color: white;
+    border: 1px solid rgb(65, 30, 130);
+    background-color: darken(rgb(65, 30, 130), $amount: 10);
+    &.active {
+      color: white;
+      border-color: transparent;
+      background-color: rgb(65, 30, 130);
+    }
+  }
+}
+
+.MuiTableCell-root.MuiTableCell-head {
+  color: white;
+}
+
+body {
+  background-color: #424950;
+}
+
+.HighLightRow:hover {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    filter: brightness(125%);
+  }
+}
+
+ul.nav.nav-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+.line-separator {  
+  height: 1px;
+  background: white;
+  border-bottom: 1px solid white;
+}

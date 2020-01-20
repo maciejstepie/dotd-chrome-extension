@@ -1,10 +1,12 @@
 import React from 'react';
 //import TableContainer from '@material-ui/core/TableContainer';
-import {GetAllRaids} from '../Raids/Raids';
+import {GetAllRaids, LinkToArt} from '../Raids/Raids';
 import { Avatar, Table,TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import  { OPEN_RAID_ACTION } from '../redux/actions';
 import { useSelector, useDispatch} from 'react-redux';
 //&nbsp;
+
+
 
 function Content(){
     const dispatch = useDispatch();
@@ -37,6 +39,8 @@ function Content(){
     const ClickRaid = (raid) =>{
       dispatch(OPEN_RAID_ACTION(raid));
     }
+
+
     return (
 <>
     {/*selectedTypes && <span>{JSON.stringify(selectedTypes)}</span>*/}
@@ -45,15 +49,15 @@ function Content(){
           <TableRow>
             <TableCell >Art</TableCell>
             <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Size</TableCell>
+            <TableCell align="center">Size</TableCell>
             <TableCell align="right">Type</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.name} className={row.size + " HighLightRow Background"  } onClick={() => {ClickRaid(row.name)}}>
+            <TableRow key={row.name} className={`Size Background ${row.size} HighLightRow `} onClick={() => {ClickRaid(row.name)}}>
               <TableCell scope="row">
-              <Avatar alt={row.name} src={row.art_essence}/>
+              <Avatar alt={row.name} src={LinkToArt('Essence', row.size, row.art_essence)}/>
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
               <TableCell align="right">{row.size}</TableCell>

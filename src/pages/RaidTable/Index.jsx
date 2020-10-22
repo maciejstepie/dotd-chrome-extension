@@ -1,4 +1,5 @@
 import React from "react";
+import Config from "../../config";
 import { useSelector } from "react-redux";
 import { GetAllRaids, LinkToArt } from "../../Raids/Raids";
 
@@ -21,16 +22,16 @@ function RaidTable() {
         <Row className="py-2">
           <Col>
             <img
-              src={LinkToArt("Thumb", raid.size, raid.art_thumb)}
+              src={LinkToArt("Thumb", raid.size.value, raid.art_thumb)}
               alt={raid.name}
             />
           </Col>
           <Col>
             <div>
-              <h5 className={`Size ${raid.size} Text`}>{raid.name}</h5>
+              <h4 className={`Size ${raid.size.value} Text`}>{raid.name}</h4>
             </div>
             <div>
-              <h6 className={`${raid.size} Text`}>{raid.size}</h6>
+              <h5 className={`${raid.size.value} Text`}>{raid.size.value}</h5>
             </div>
           </Col>
         </Row>
@@ -54,18 +55,20 @@ function RaidTable() {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card className="bg-dark text-light m-2">
-          <Accordion.Toggle as={Card.Header} eventKey="1">
-            Raw JSON
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="1">
-            <Card.Body>
-              <pre className="text-left text-light text-justify">
-                {JSON.stringify(raid, null, 3)}
-              </pre>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
+        {Config.dev_mode === true && (
+          <Card className="bg-dark text-light m-2">
+            <Accordion.Toggle as={Card.Header} eventKey="1">
+              Raw JSON
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <pre className="text-left text-light text-justify">
+                  {JSON.stringify(raid, null, 3)}
+                </pre>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        )}
       </Accordion>
 
       {/* Raid tiers table */}

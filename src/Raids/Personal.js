@@ -15,7 +15,7 @@ export const PersonalRaidsData = [
         art_essence: 'Essence_magmahorror.png',
         tiers: [{
             difficulty: "Personal",
-            maxHp: 200000,
+            maxHp: "200k",
         }]
     },
     {

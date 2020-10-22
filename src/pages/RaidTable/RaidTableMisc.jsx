@@ -20,23 +20,22 @@ export function RaidTableMisc(props) {
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell scope="row">{raid.rarity || "?"}</TableCell>
+          <TableCell scope="row">{raid.rarity.value || "?"}</TableCell>
           <TableCell align="center">
             {raid.resources
               ? raid.resources.map(keys => (
-                  <div key={keys} className={`Resources ${keys}`}>
+                  <div key={keys} className={`Resources ${keys.value}`}>
                     {" "}
-                    {keys}{" "}
+                    {keys.value}{" "}
                   </div>
                 ))
               : "?"}
           </TableCell>
           <TableCell align="right">
             {raid.statSwap
-              ? raid.statSwap.map((key,i) => (
-                  <div className={`Stat ${key.stat}`} key={i}>
-                    {" "}
-                    {`${key.stat}: x${key.value}`}
+              ? Object.keys(raid.statSwap).map(key => (
+                  <div className={`Stat ${key}`} key={key}>
+                    {`${key}: x${raid.statSwap[key]}`}
                   </div>
                 ))
               : "Normal"}

@@ -66,7 +66,7 @@ function FormatNumber(value, forShow) {
   }
 
   return forShow
-    ? numeral(value).format(`0[.]0 a`)
+    ? numeral(value).format(`0[.]0[0] a`)
     : numeral(value).format(`0`);
 }
 

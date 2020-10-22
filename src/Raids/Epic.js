@@ -1,20 +1,37 @@
 export const EpicRaidsData = [
   {
-    id: 0,
     name: "Deadly Erebus",
-    size: "Epic",
-    type: ["Deadly", "Dragon"],
+    size: {
+      value: "Epic"
+    },
+    type: [
+      {
+        value: "Deadly"
+      },
+      {
+        value: "Dragon"
+      }
+    ],
     timer: 96,
     magics: 10,
     cooldown: 160,
     maxPlayers: 800,
-    rarity: "Uncommon",
-    resources: ["Energy", "Stamina"],
-    statSwap: [
-      { stat: "Attack", value: 4 },
-      { stat: "Defense", value: 4 },
-      { stat: "Health", value: 3 }
+    rarity: {
+      value: "Uncommon"
+    },
+    resources: [
+      {
+        value: "Energy"
+      },
+      {
+        value: "Stamina"
+      }
     ],
+    statSwap: {
+      Attack: "4",
+      Defense: "4",
+      Health: "3"
+    },
     notes_obtain:
       "Crafting: 150x Brown Shadow Fragments 150x Grey History of Dahrizon 1x Erebus the Black Essence 1x Tainted Erebus Essence 75x Vampire Hunter Mage 50x Writhing Tentacle",
     notes:
@@ -24,29 +41,29 @@ export const EpicRaidsData = [
     tiers: [
       {
         difficulty: "Normal",
-        maxHp: 5 * 10 ** 17
+        maxHp: "500q"
       },
       {
         difficulty: "Hard",
-        maxHp: 5 * 10 ** 17
+        maxHp: "500q"
       },
       {
         difficulty: "Legendary",
-        maxHp: 5 * 10 ** 17
+        maxHp: "500q"
       },
       {
         difficulty: "Nightmare",
-        maxHp: 5 * 10 ** 17,
+        maxHp: "500q",
         tier: [
           {
-            Damage: 10 ** 11,
+            Damage: 100000000000,
             Common: null,
             Uncommon: null,
             Rare: 3861,
             Epic: 1
           },
           {
-            Damage: 3 * 10 ** 11,
+            Damage: 300000000000,
             Common: null,
             Uncommon: null,
             Rare: 11583,

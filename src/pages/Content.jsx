@@ -55,13 +55,13 @@ function Content(){
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.name} className={`Size Background ${row.size} HighLightRow `} onClick={() => {ClickRaid(row.name)}}>
+            <TableRow key={row.name} className={`Size Background ${row.size.value} HighLightRow `} onClick={() => {ClickRaid(row.name)}}>
               <TableCell scope="row">
-              <Avatar alt={row.name} src={LinkToArt('Essence', row.size, row.art_essence)}/>
+              <Avatar alt={row.name} src={LinkToArt('Essence', row.size.value, row.art_essence)}/>
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.size}</TableCell>
-              <TableCell align="right">{row.type.join(", ")}</TableCell>
+              <TableCell align="right">{row.size.value}</TableCell>
+              <TableCell align="right">{row.type.map((el)=> el.value).join(", ")}</TableCell>
             </TableRow>
           ))}
         </TableBody>

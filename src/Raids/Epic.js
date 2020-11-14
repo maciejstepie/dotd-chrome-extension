@@ -1,36 +1,20 @@
 export const EpicRaidsData = [
   {
     name: "Deadly Erebus",
-    size: {
-      value: "Epic"
-    },
-    type: [
-      {
-        value: "Deadly"
-      },
-      {
-        value: "Dragon"
-      }
-    ],
+    size: "Epic",
+
+    type: ["Deadly", "Dragon"],
     timer: 96,
     magics: 10,
     cooldown: 160,
     maxPlayers: 800,
-    rarity: {
-      value: "Uncommon"
-    },
-    resources: [
-      {
-        value: "Energy"
-      },
-      {
-        value: "Stamina"
-      }
-    ],
+    rarity: "Uncommon",
+
+    resources: ["Energy", "Stamina"],
     statSwap: {
       Attack: "4",
       Defense: "4",
-      Health: "3"
+      Health: "3",
     },
     notes_obtain:
       "Crafting: 150x Brown Shadow Fragments 150x Grey History of Dahrizon 1x Erebus the Black Essence 1x Tainted Erebus Essence 75x Vampire Hunter Mage 50x Writhing Tentacle",
@@ -41,15 +25,15 @@ export const EpicRaidsData = [
     tiers: [
       {
         difficulty: "Normal",
-        maxHp: "500q"
+        maxHp: "500q",
       },
       {
         difficulty: "Hard",
-        maxHp: "500q"
+        maxHp: "500q",
       },
       {
         difficulty: "Legendary",
-        maxHp: "500q"
+        maxHp: "500q",
       },
       {
         difficulty: "Nightmare",
@@ -60,124 +44,124 @@ export const EpicRaidsData = [
             Common: null,
             Uncommon: null,
             Rare: 3861,
-            Epic: 1
+            Epic: 1,
           },
           {
             Damage: 300000000000,
             Common: null,
             Uncommon: null,
             Rare: 11583,
-            Epic: 2
+            Epic: 2,
           },
           {
             Damage: "600b",
             Common: null,
             Uncommon: null,
             Rare: 23165,
-            Epic: 3
+            Epic: 3,
           },
           {
             Rare: "27,026",
             Epic: 4,
-            Damage: "700b"
+            Damage: "700b",
           },
           {
             Rare: "57,913",
             Epic: 5,
-            Damage: "1.5t"
+            Damage: "1.5t",
           },
           {
             Rare: "231,653",
             Epic: 6,
-            Damage: "6t"
+            Damage: "6t",
           },
           {
             Rare: "282,444",
             Epic: 8,
-            Damage: "12t"
+            Damage: "12t",
           },
           {
             Rare: "309,366",
             Epic: 9,
-            Damage: "15t"
+            Damage: "15t",
           },
           {
             Rare: "373,927",
             Epic: 9,
-            Damage: "20t"
+            Damage: "20t",
           },
           {
             Rare: "396,742",
             Epic: 9,
-            Damage: "30t"
+            Damage: "30t",
           },
           {
             Rare: "418,340",
             Epic: 10,
-            Damage: "40t"
+            Damage: "40t",
           },
           {
             Rare: "431,718",
             Epic: 10,
-            Damage: "50t"
+            Damage: "50t",
           },
           {
             Rare: "585,138",
             Epic: 10,
-            Damage: "100t"
+            Damage: "100t",
           },
           {
             Rare: "766,577",
             Epic: 15,
-            Damage: "200t"
+            Damage: "200t",
           },
           {
             Rare: "880,023",
             Epic: 20,
-            Damage: "300t"
+            Damage: "300t",
           },
           {
             Rare: "1,337,137",
             Epic: 30,
-            Damage: "750t"
+            Damage: "750t",
           },
           {
             Rare: "3,837,299",
             Epic: 40,
-            Damage: "1.5q"
+            Damage: "1.5q",
           },
           {
             Rare: "4,641,448",
             Epic: 50,
-            Damage: "2q"
+            Damage: "2q",
           },
           {
             Rare: "11,594,203",
             Epic: 60,
-            Damage: "4q"
+            Damage: "4q",
           },
           {
             Rare: "29,090,909",
             Epic: 70,
-            Damage: "8q"
+            Damage: "8q",
           },
           {
             Rare: "42,404,325",
             Epic: 80,
-            Damage: "12q"
+            Damage: "12q",
           },
           {
             Rare: "49,107,874",
             Epic: 100,
-            Damage: "30q"
+            Damage: "30q",
           },
           {
             Rare: "59,946,049",
             Epic: 150,
-            Damage: "60q"
-          }
-        ]
-      }
-    ]
-  }
+            Damage: "60q",
+          },
+        ],
+      },
+    ],
+  },
 ];

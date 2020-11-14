@@ -8,11 +8,11 @@ import { useDispatch } from "react-redux";
 
 export function NavTop() {
   const dispatch = useDispatch();
-  const ClickBack = raidRoute => {
+  const ClickBack = (raidRoute) => {
     dispatch(OPEN_RAID_ACTION(raidRoute));
   };
 
-  const switchContent = s => {
+  const switchContent = (s) => {
     switch (s) {
       case "fav":
         alert("Hello!" + s);
@@ -28,7 +28,7 @@ export function NavTop() {
 
   return (
     <>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
         <Navbar.Brand
           onClick={() => {
             ClickBack(null);

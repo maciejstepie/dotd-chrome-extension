@@ -2,7 +2,6 @@ import React from "react";
 import { Tabs, Tab } from "react-bootstrap";
 
 import { ShowFormatedHpDMg } from "../../Raids/Raids";
-import numeral from "numeral";
 
 import {
   Table,
@@ -46,8 +45,6 @@ function TabContent(tier, maxPlayers, OptimalShare) {
           </TableRow>
         </TableBody>
       </Table>
-
-      
     </>
   );
 
@@ -90,9 +87,9 @@ export function RaidTableTiers(props) {
   return (
     <Tabs
       defaultActiveKey={
-        props.raid.size === "Personal" ? "Personal" : "Nightmare"
+        props.raid.size === "Personal" ? "Personal" : "Legendary"
       }
-      className="m-1 xd"
+      className="m-2"
     >
       {raidTiers.map((key, i) => (
         <Tab

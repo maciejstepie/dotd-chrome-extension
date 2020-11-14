@@ -2,52 +2,59 @@ import React from "react";
 import { Form, Field } from "react-final-form";
 import { Form as BForm, Row, Col, Button } from "react-bootstrap";
 import Select from "react-select";
-import { ColossalRaidsData as some } from "../Raids/Colossal";
 import { FieldArray } from "react-final-form-arrays";
 import arrayMutators from "final-form-arrays";
 
-const onSubmit = async values => {
-  window.alert(JSON.stringify(values, 0, 2));
+const returnAsObject = (arr) => {
+  let tmp = [];
+  arr.forEach((element) => {
+    tmp.push({ value: element });
+  });
+  return tmp;
 };
+const types = returnAsObject([
+  "Deadly",
+  "Dragon",
+  "Magical Creature",
+  "Undefinied",
+]);
 
-const types = [
-  { value: "Deadly" },
-  { value: "Dragon" },
-  { value: "Magical Creature" }
-];
+const sizes = returnAsObject([
+  "Epic",
+  "Medium",
+  "Colossal",
+  "Large",
+  "Personal",
+  "Gigantic",
+  "Undefinied",
+]);
 
-const sizes = [
-  { value: "Epic" },
-  { value: "Medium" },
-  { value: "Colossal" },
-  { value: "Large" },
-  { value: "Personal" },
-  { value: "Gigantic" }
-];
+const rarities = returnAsObject(["Uncommon", "Undefinied"]);
 
-export class AdminTools extends React.Component {
+export class GeneratorJSON extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { val: some[0] };
+    this.state = { fixed: {} };
   }
-
+  onSubmit = async (values) => {
+    this.setState({ fixed: values });
+  };
   componentDidMount() {
     document.body.style.width = "100%";
   }
   render() {
     return (
       <Form
-        onSubmit={onSubmit}
+        onSubmit={this.onSubmit}
         mutators={{
-          ...arrayMutators
+          ...arrayMutators,
         }}
-        initialValues={this.state.val}
         render={({
           handleSubmit,
           values,
           form: {
-            mutators: { push, pop }
-          }
+            mutators: { push, pop },
+          },
         }) => (
           <BForm onSubmit={handleSubmit} className="m-2">
             <Row className="mb-2">
@@ -68,7 +75,7 @@ export class AdminTools extends React.Component {
                     <Select
                       {...input}
                       options={sizes}
-                      getOptionLabel={option => option.value}
+                      getOptionLabel={(option) => option.value}
                     />
                   )}
                 />
@@ -84,9 +91,9 @@ export class AdminTools extends React.Component {
                     <Select
                       {...input}
                       options={types}
-                      isMulti
+                      isMulti={true}
                       isSearchable
-                      getOptionLabel={option => option.value}
+                      getOptionLabel={(option) => option.value}
                     />
                   )}
                 />
@@ -139,8 +146,8 @@ export class AdminTools extends React.Component {
                   render={({ input, meta }) => (
                     <Select
                       {...input}
-                      options={[{ value: "Uncommon" }]}
-                      getOptionLabel={option => option.value}
+                      options={rarities}
+                      getOptionLabel={(option) => option.value}
                     />
                   )}
                 />
@@ -152,12 +159,8 @@ export class AdminTools extends React.Component {
                   render={({ input, meta }) => (
                     <Select
                       {...input}
-                      options={[
-                        { value: "Energy" },
-                        { value: "Stamina" },
-                        { value: "Honor" }
-                      ]}
-                      getOptionLabel={option => option.value}
+                      options={returnAsObject(["Energy", "Stamina", "Honor"])}
+                      getOptionLabel={(option) => option.value}
                       isMulti
                     />
                   )}
@@ -220,7 +223,7 @@ export class AdminTools extends React.Component {
                 <Field
                   name="art_thumb"
                   render={({ input, meta }) => (
-                    <BForm.Control type="text" {...input} />
+                    <BForm.Control type="text" {...input} placeholder="art_thumb.jpg"/>
                   )}
                 />
               </Col>
@@ -229,15 +232,14 @@ export class AdminTools extends React.Component {
                 <Field
                   name="art_essence"
                   render={({ input, meta }) => (
-                    <BForm.Control type="text" {...input} />
+                    <BForm.Control type="text" {...input} placeholder="art_essence.jpg"/>
                   )}
                 />
               </Col>
             </Row>
 
             {/*tiers*/}
-            <div className="text-info d-inline m-4">Tiers</div>
-            <Row>
+            <Row className="mt-2">
               <Col>
                 <Button
                   variant="info"
@@ -256,11 +258,13 @@ export class AdminTools extends React.Component {
                   Remove Tier group
                 </Button>
               </Col>
+              <Col>
+                <Button type="submit" variant="info">
+                  Fixlabels
+                </Button>
+              </Col>
             </Row>
-
-            <Button type="submit" className="m-2" variant="info">
-              Fixlabels
-            </Button>
+            <hr />
 
             <FieldArray name="tiers">
               {({ fields }) =>
@@ -284,20 +288,31 @@ export class AdminTools extends React.Component {
                       />
                       <span
                         onClick={() => fields.remove(index)}
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer", color: "white" }}
+                        className="mx-2"
                       >
                         X
                       </span>
-                      {<div>{JSON.stringify(group
-                         || "nope")}</div>}
+                      {<div>{JSON.stringify(group || "nope")}</div>}
                     </div>
-                    
                   </div>
                 ))
               }
             </FieldArray>
-
-            <pre className="w-100">{JSON.stringify(values, null, 1)}</pre>
+            <Row className="text-white">
+              <Col>
+                <p>Clean</p>
+                <br />
+                <pre className="w-100 text-white text-left">{JSON.stringify(values, null, 2)}</pre>
+              </Col>
+              <Col>
+                <p>Fixed</p>
+                <br />
+                <pre className="w-100 text-white text-left">
+                  {JSON.stringify(this.state.fixed, null, 2)}
+                </pre>
+              </Col>
+            </Row>
           </BForm>
         )}
       />

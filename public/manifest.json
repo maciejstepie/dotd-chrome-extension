@@ -1,41 +1,31 @@
 {
-  "short_name": "DotD Extension",
-  "name": "DotD Extension Raid Tiers",
-  "icons": {                   
+  "short_name": "DotV Extension",
+  "name": "DotV Extension Raid Tiers",
+  "icons": {
     "16": "/media/icons/icon.png",
-          "48": "/media/icons/icon.png",
-         "128": "/media/icons/icon128.png"
-  },  
-  "permissions": [
-    "tabs",
-    "declarativeContent",
-    "storage"
-],
-
-  
+    "48": "/media/icons/icon.png",
+    "128": "/media/icons/icon128.png"
+  },
+  "permissions": ["declarativeContent", "storage", "activeTab", "<all_urls>"],
+  "content_security_policy": "script-src 'self' sha256-kZj5Sb/CDupG2DZMXrzPu24GvrDb4zFPg2F9bZTRqEM='",
   "version": "1.0",
-    "manifest_version": 2,
-    "browser_action": {
-        "default_popup": "index.html",
-        
-        "default_icon": {
-          "16": "/media/icons/icon.png",
-          "48": "/media/icons/icon.png",
-         "128": "/media/icons/icon128.png" 
-      }
-    },
-    "background": {
-      "scripts": [
-        "browser-polyfill.js",
-        "background.js"
-      ]
-    },
-    "content_scripts": [{      
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+
+    "default_icon": {
+      "16": "/media/icons/icon.png",
+      "48": "/media/icons/icon.png",
+      "128": "/media/icons/icon128.png"
+    }
+  },
+  "background": {
+    "scripts": ["browser-polyfill.js", "background.js"]
+  },
+  "content_scripts": [
+    {
       "matches": ["http://*/*"],
-      "js": [
-        "browser-polyfill.js"
-      ]
-    }]
-
-
+      "js": ["browser-polyfill.js", "contentScript.js"]
+    }
+  ]
 }

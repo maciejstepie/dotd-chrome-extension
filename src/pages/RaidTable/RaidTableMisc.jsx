@@ -4,7 +4,7 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TableRow
+  TableRow,
 } from "@material-ui/core";
 
 export function RaidTableMisc(props) {
@@ -20,20 +20,19 @@ export function RaidTableMisc(props) {
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell scope="row">{raid.rarity.value || "?"}</TableCell>
+          <TableCell scope="row">{raid.rarity || "?"}</TableCell>
           <TableCell align="center">
             {raid.resources
-              ? raid.resources.map(keys => (
-                  <div key={keys} className={`Resources ${keys.value}`}>
-                    {" "}
-                    {keys.value}{" "}
+              ? raid.resources.map((key) => (
+                  <div key={key} className={`Resources ${key}`}>
+                    {key}
                   </div>
                 ))
               : "?"}
           </TableCell>
           <TableCell align="right">
             {raid.statSwap
-              ? Object.keys(raid.statSwap).map(key => (
+              ? Object.keys(raid.statSwap).map((key) => (
                   <div className={`Stat ${key}`} key={key}>
                     {`${key}: x${raid.statSwap[key]}`}
                   </div>

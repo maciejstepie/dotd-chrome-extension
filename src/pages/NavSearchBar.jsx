@@ -8,20 +8,21 @@ import { useSelector, useDispatch } from "react-redux";
 export function NavSearchBar() {
   const dispatch = useDispatch();
 
-  const handleChange = selectedOption => {
+  const handleChange = (selectedOption) => {
     dispatch(SELECT_CHANGED_ACTION(selectedOption));
   };
 
-  const selectedOption = useSelector(state => state.searchReducer);
-
+  const selectedOption = useSelector((state) => state.searchReducer);
+  const tmpGetTypes = GetTypes(); //idk why but it fix
   return (
     <Select
       value={selectedOption}
       onChange={handleChange}
-      options={GetTypes}
+      options={tmpGetTypes}
       placeholder={"Write type of raid..."}
       isMulti={true}
       isSearchable={true}
+      className="raidSearch"
     />
   );
 }

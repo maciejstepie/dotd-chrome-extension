@@ -4,6 +4,7 @@ import { LargeRaidsData } from "../Raids/Large";
 import { EpicRaidsData } from "../Raids/Epic";
 import { GiganticRaidsData } from "../Raids/Gigantic";
 import { ColossalRaidsData } from "../Raids/Colossal";
+import { UndefiniedRaidsData } from "../Raids/Undefinied";
 import numeral from "numeral";
 
 function dynamicSort(property) {
@@ -12,7 +13,7 @@ function dynamicSort(property) {
     sortOrder = -1;
     property = property.substr(1);
   }
-  return function(a, b) {
+  return function (a, b) {
     var result =
       a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
     return result * sortOrder;
@@ -24,18 +25,20 @@ function AllRaids() {
     .concat(LargeRaidsData)
     .concat(EpicRaidsData)
     .concat(GiganticRaidsData)
-    .concat(ColossalRaidsData);
+    .concat(ColossalRaidsData)
+    .concat(UndefiniedRaidsData);
 }
 export const GetAllRaids = AllRaids(); //idk but tak trzeba
 
 export function GetTypes() {
-  const ar = AllRaids().map(function(x) {
+  const ar = AllRaids().map(function (x) {
     return x.type;
   });
+
   const merged = [].concat.apply([], ar);
   const uniq = [...new Set(merged)];
-  const valuated = uniq.map(function(x) {
-    return { value: x, label: x };
+  const valuated = uniq.map(function (el) {
+    return { value: el, label: el };
   });
   return valuated.sort(dynamicSort("value"));
 }
@@ -48,7 +51,7 @@ function FormatNumber(value, forShow) {
     !isNumber && value !== undefined ? value.split(/(\d+\.?\d?)\s?(\D*)/) : [];
 
   let t = [];
-  x.forEach(element => {
+  x.forEach((element) => {
     if (element !== "") t.push(element);
   });
   if (t.length === 2) {

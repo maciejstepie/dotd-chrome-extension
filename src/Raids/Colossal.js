@@ -1,26 +1,15 @@
 export const ColossalRaidsData = [
   {
     name: "Craenaestra the Stalker",
-    size: {
-      value: "Colossal"
-    },
-    type: [
-      {
-        value: "Dragon"
-      }
-    ],
+    size: "Colossal",
+
+    type: ["Dragon"],
     timer: 96,
     magics: 7,
     cooldown: 48,
     maxPlayers: null,
-    rarity: {
-      value: "Uncommon"
-    },
-    resources: [
-      {
-        value: "Stamina"
-      }
-    ],
+    rarity: "Uncommon",
+    resources: ["Stamina"],
     notes_obtain: "Crafting: 50x Daily Assignment Token",
     notes: "Sharp claws protected behind crimson scales.",
     art_thumb: "Craenaestra_small.jpg",
@@ -29,15 +18,15 @@ export const ColossalRaidsData = [
     tiers: [
       {
         difficulty: "Normal",
-        maxHp: "800t"
+        maxHp: "800t",
       },
       {
         difficulty: "Hard",
-        maxHp: "1t"
+        maxHp: "1t",
       },
       {
         difficulty: "Legendary",
-        maxHp: "1.3t"
+        maxHp: "1.3t",
       },
       {
         difficulty: "Nightmare",
@@ -50,10 +39,10 @@ export const ColossalRaidsData = [
             Uncommon: null,
             Rare: null,
             SP: "134k",
-            Epic: null
-          }
-        ]
-      }
-    ]
-  }
+            Epic: null,
+          },
+        ],
+      },
+    ],
+  },
 ];

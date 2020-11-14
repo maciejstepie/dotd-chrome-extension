@@ -1,4 +1,4 @@
-$personalColor: limegreen;
+$easyColor: limegreen;
 $normalColor: rgb(30, 130, 38);
 
 .App {
@@ -94,16 +94,16 @@ $normalColor: rgb(30, 130, 38);
 }
 
 .Difficulty {
-  &.Personal {
-    color: $personalColor;
-    border: 1px solid $personalColor;
+  &.Easy {
+    color: white;
+    border: 1px solid $easyColor;
+    background-color: darken($easyColor, $amount: 10);
 
     &.active {
       color: white;
       border-color: transparent;
-      background-color: $personalColor;
+      background-color: $easyColor;
     }
-    //nav-item nav-link active
   }
 
   &.Normal {
@@ -157,6 +157,7 @@ $normalColor: rgb(30, 130, 38);
 
 body {
   background-color: #424950;
+  min-width: 500px;
 }
 
 .HighLightRow:hover {
@@ -180,8 +181,25 @@ ul.nav.nav-tabs {
 .nav-tabs {
   border-bottom: none;
 }
-.line-separator {  
+.line-separator {
   height: 1px;
   background: white;
   border-bottom: 1px solid white;
+}
+
+.navbar {
+  &-brand {
+    cursor: pointer;
+  }
+}
+.MuiTableRow {
+  &-root {
+    cursor: pointer;
+  }
+  &-head {
+    cursor: default;
+  }
+}
+.raidSearch {
+  min-width: 250px;
 }

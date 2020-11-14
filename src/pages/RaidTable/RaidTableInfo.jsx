@@ -21,7 +21,7 @@ const raid = props.raid;
       </TableHead>
       <TableBody>
         <TableRow key={raid.name}>
-          <TableCell scope="row">{raid.type.map((el)=> el.value).join(", ") || "?"}</TableCell>
+          <TableCell scope="row">{raid.type.map((el)=> el).join(", ") || "?"}</TableCell>
           <TableCell align="right">{raid.magics || "?"}</TableCell>
           <TableCell align="right">{raid.timer || "?"}</TableCell>
           <TableCell align="right">{raid.cooldown || "?"}</TableCell>

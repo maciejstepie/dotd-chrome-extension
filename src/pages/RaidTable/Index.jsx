@@ -22,16 +22,16 @@ function RaidTable() {
         <Row className="py-2">
           <Col>
             <img
-              src={LinkToArt("Thumb", raid.size.value, raid.art_thumb)}
+              src={LinkToArt("Thumb", raid.size, raid.art_thumb)}
               alt={raid.name}
             />
           </Col>
           <Col>
             <div>
-              <h4 className={`Size ${raid.size.value} Text`}>{raid.name}</h4>
+              <h4 className={`Size ${raid.size} Text`}>{raid.name}</h4>
             </div>
             <div>
-              <h5 className={`${raid.size.value} Text`}>{raid.size.value}</h5>
+              <h5 className={`${raid.size} Text`}>{raid.size}</h5>
             </div>
           </Col>
         </Row>

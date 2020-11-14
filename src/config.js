@@ -1,6 +1,7 @@
 const Config = {
-  Name: "DotD Extension Raid Tiers",
-  ShortName: "DotD Extension",
-  dev_mode: true
+  Name: "DotV Extension Raid Tiers",
+  ShortName: "DotV Extension",
+  dev_mode: true,
+  resources: ["",""]
 };
 export default Config;

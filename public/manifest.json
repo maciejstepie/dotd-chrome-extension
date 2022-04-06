@@ -6,8 +6,7 @@
     "48": "/media/icons/icon.png",
     "128": "/media/icons/icon128.png"
   },
-  "permissions": ["declarativeContent", "storage", "activeTab", "<all_urls>"],
-  "content_security_policy": "script-src 'self' sha256-kZj5Sb/CDupG2DZMXrzPu24GvrDb4zFPg2F9bZTRqEM='",
+  "permissions": ["declarativeContent", "storage", "activeTab", "tabCapture", "tabs","<all_urls>"],
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
